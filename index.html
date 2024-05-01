@@ -10,7 +10,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style/style.css" />
     <title>E-commerce VueJS</title>
   </head>
   <body>
@@ -29,21 +29,17 @@
 
         <div class="lower-part">
           <div class="product-container">
-            <div class="card">
-              <div class="price"><span>200 €</span></div>
-              <img
-                src="https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-                alt=""
-              />
-              <div class="button-container">
-                <button class="left-button">
-                  <i class="fa-solid fa-heart"></i>
-                </button>
-                <button class="right-button">
-                  <i class="fa-solid fa-cart-shopping"></i>
-                </button>
+            <h2>Produits</h1>
+              <div class="wrapper">
+                <ul class="card-container">
+                  <card-component
+                    v-for="product in productList"
+                    :price="product.price"
+                    :image_url="product.imgSrc"
+                    :like="product.like"
+                  ></card-component>
+                </ul>
               </div>
-            </div>
           </div>
 
           <div class="sidebar">
@@ -67,6 +63,7 @@
       </div>
     </div>
 
-    <script type="module" src="script.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script type="module" src="./script.js"></script>
   </body>
 </html>

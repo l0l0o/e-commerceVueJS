@@ -1,0 +1,64 @@
+@import "./header";
+@import "./sidebar";
+@import "./card";
+@import "./sidecard";
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+button {
+  background: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .lower-part {
+    display: flex;
+    height: 100%;
+
+    .product-container {
+      padding: 16px;
+      width: 75vw;
+      overflow: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+      }
+
+      .wrapper {
+        display: flex;
+        width: 100%;
+        height: fit-content;
+        justify-content: center;
+      }
+      .card-container {
+        width: fit-content;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+      }
+    }
+  }
+}
